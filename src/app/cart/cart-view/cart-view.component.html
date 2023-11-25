@@ -1,0 +1,20 @@
+<div class="container">
+  <mat-card>
+    <mat-list>
+      <mat-list-item *ngFor="let cart of carts">
+        <span matListItemTitle>{{cart.name}}</span>
+        <span matListItemLine>{{cart.price | currency: 'USD'}}</span>
+      </mat-list-item>
+
+      <mat-list-item>
+        <span class="price" matListItemTitle>Total (USD)</span>
+        <span class="price" matListItemLine>{{totalPrice | currency: 'USD'}}</span>
+      </mat-list-item>
+
+      <mat-list-item class="text-right">
+        <button mat-flat-button (click)="clearCarts()">Clear</button>
+        <button mat-raised-button color="accent" (click)="checkout()">Checkout</button>
+      </mat-list-item>
+    </mat-list>
+  </mat-card>
+</div>
